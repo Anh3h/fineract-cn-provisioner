@@ -38,6 +38,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.config.JmsListenerContainerFactory;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
@@ -59,6 +60,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @EnableCassandra
 @EnableServiceException
 @EnableApplicationName
+@Import({
+    SecurityConfiguration.class
+})
 @EnableConfigurationProperties({ProvisionerActiveMQProperties.class, ProvisionerProperties.class, SystemProperties.class})
 public class ProvisionerServiceConfig extends WebMvcConfigurerAdapter {
 
