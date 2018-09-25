@@ -20,6 +20,9 @@ public class SecurityConfiguration extends WebMvcConfigurerAdapter {
 		this.properties.setProperty("system.publicKey.timestamp", this.keyPairHolder.getTimestamp());
 		this.properties.setProperty("system.publicKey.modulus", this.keyPairHolder.publicKey().getModulus().toString());
 		this.properties.setProperty("system.publicKey.exponent", this.keyPairHolder.publicKey().getPublicExponent().toString());
+		System.out.println("system.publicKey.timestamp : " + this.keyPairHolder.getTimestamp());
+		System.out.println("system.publicKey.modulus : "+ this.keyPairHolder.publicKey().getModulus().toString());
+		System.out.println("system.publicKey.exponent : "+ this.keyPairHolder.publicKey().getPublicExponent().toString());
 		this.properties.setProperty("system.privateKey.modulus", this.keyPairHolder.privateKey().getModulus().toString());
 		this.properties.setProperty("system.privateKey.exponent", this.keyPairHolder.privateKey().getPrivateExponent().toString());
 		System.getProperties().putAll(this.properties);
